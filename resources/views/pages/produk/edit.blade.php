@@ -28,7 +28,7 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="harga" class="col-sm-3 col-form-label">Nama Produk</label>
+                        <label for="harga" class="col-sm-3 col-form-label">Harga Produk</label>
                         <div class="col-sm-9">
                             <input value="{{ old('harga', $item->harga) }}" type="number"
                                 class="form-control @error('harga') is-invalid @enderror" name="harga" id="harga"

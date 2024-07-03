@@ -1,10 +1,12 @@
 <?php
 
+use App\Http\Controllers\ClientController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\GejalaController;
 use App\Http\Controllers\GejalaKePenyakitController;
 use App\Http\Controllers\GejalaRuleController;
 use App\Http\Controllers\KeputusanRuleController;
+use App\Http\Controllers\PembayaranController;
 use App\Http\Controllers\PenyakitController;
 use App\Http\Controllers\PenyakitKeGejalaController;
 use App\Http\Controllers\ProdukController;
@@ -27,9 +29,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('pages.auth.login');
-})->middleware(['guest']);
+Route::get('/', [ClientController::class,'home'])->name('home');
 
 // matikan route ini jika .env email sudah di seting
 Route::get('/forgot-password', function () {
@@ -41,6 +41,11 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/profile', [DashboardController::class, 'profile'])->name('profile');
     Route::put('/change-profile-avatar', [DashboardController::class, 'changeAvatar'])->name('change-profile-avatar');
     Route::delete('/remove-profile-avatar', [DashboardController::class, 'removeAvatar'])->name('remove-profile-avatar');
+    Route::get('/shop', [ClientController::class, 'shop'])->name('shop');
+    Route::get('/profileUser', [ClientController::class, 'profileUser'])->name('profileUser');
+    Route::post('/cekout', [ClientController::class, 'cekout'])->name('cekout');
+    Route::get('/transaksiUser', [ClientController::class, 'transaksiUser'])->name('transaksiUser');
+
 
     // route untuk superadmin jika diperlukan
     // Route::middleware(['can:superadmin'])->group(function () {
@@ -54,6 +59,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
         Route::resources(['user' => UserController::class,]);
         Route::resources(['produk' => ProdukController::class,]);
         Route::resources(['transaksi' => TransaksiController::class,]);
+        Route::resources(['pembayaran' => PembayaranController::class,]);
     });
 
     // route untuk user

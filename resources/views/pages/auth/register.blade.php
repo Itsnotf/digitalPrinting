@@ -8,7 +8,7 @@
         <div class="row">
             <div class="col-12 col-sm-10 offset-sm-1 col-md-8 offset-md-2 col-lg-8 offset-lg-2 col-xl-8 offset-xl-2">
                 <div class="login-brand">
-                    <img src="{{ asset('assets/img/icon.png') }}" class="icon mb-3" alt="icon">
+                    {{-- <img src="{{ asset('assets/img/icon.png') }}" class="icon mb-3" alt="icon"> --}}
                     <p class="font-weight-bold text-primary" style="font-size:16px;">{{ env('APP_FULLNAME') }}</p>
                 </div>
                 <div class="card">

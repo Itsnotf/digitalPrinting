@@ -13,15 +13,15 @@ class PembayaranSeeder extends Seeder
      */
     public function run(): void
     {
-        pembayaran::factory()->create([
+        pembayaran::create([
             'nama' => 'Dana',
-            'nomor' => '08129232023',
+            'nomer' => '08129232023',
             'an' => 'Faiz Aflah Hafizuddin',
             'jenis' => 'E-Wallet',
         ]);
-        pembayaran::factory()->create([
+        pembayaran::create([
             'nama' => 'Mandiri',
-            'nomor' => '1232245612933921',
+            'nomer' => '1232245612933921',
             'an' => 'Faiz Aflah Hafizuddin',
             'jenis' => 'Bank',
         ]);

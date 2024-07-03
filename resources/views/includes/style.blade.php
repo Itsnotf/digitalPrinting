@@ -11,6 +11,9 @@
 <!-- Template CSS -->
 <link rel="stylesheet" href="{{ asset('/assets/css/style.css') }}">
 <link rel="stylesheet" href="{{ asset('/assets/css/components.css') }}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
 
 <!-- Custom CSS -->
 <style type="text/css">
@@ -18,6 +21,11 @@
         /* Colors */
         --colors: #000;
         --shadow: #eee;
+    }
+
+    *{
+        font-family: "Manrope", sans-serif;
+        font-optical-sizing: auto;
     }
 
     .navbar .dropdown-item.has-icon i {

@@ -1,14 +1,14 @@
 @extends('layouts.app')
 
-@section('title', 'Kelola Produk')
-@section('desc', ' Dihalaman ini anda bisa kelola produk. ')
+@section('title', 'Kelola Pembayaran')
+@section('desc', ' Dihalaman ini anda bisa kelola pembayaran. ')
 
 @section('content')
 <div class="card">
     <div class="card-header">
-        <h4>List Produk</h4>
+        <h4>List Pembayaran</h4>
         <div class="card-header-action">
-            <a href="{{ route('produk.create') }}" class="btn btn-primary">
+            <a href="{{ route('pembayaran.create') }}" class="btn btn-primary">
                 <i class="fa fa-plus"></i>
                 Tambah
             </a>
@@ -20,9 +20,10 @@
                 <thead>
                     <tr>
                         <th>#</th>
-                        <th>Gambar</th>
-                        <th>Produk</th>
-                        <th>harga</th>
+                        <th>Nama</th>
+                        <th>Nomer</th>
+                        <th>Atas Nama</th>
+                        <th>Jenis</th>
                         <th>Aksi</th>
                     </tr>
                 </thead>
@@ -52,37 +53,21 @@
             ],
             columns: [
                 {data: 'id', name: 'id'},
-                {data: 'gambar', name: 'gambar'},
-                {data: 'namaProduk', name: 'namaProduk'},
-                {
-                    data: 'harga',
-                    name: 'harga',
-                    render: function(data, type, row) {
-                        // Format harga to Rupiah
-                        return 'Rp ' + new Intl.NumberFormat('id-ID').format(data);
-                    }
-                },
+                {data: 'nama', name: 'nama'},
+                {data: 'nomer', name: 'nomer'},
+                {data: 'an', name: 'an'},
+                {data: 'jenis', name: 'jenis'},
                 {data: 'aksi', name: 'aksi'},
             ],
             columnDefs: [{
-                "targets": 1,
-                "render": function(data, type, row, meta) {
-                    let img = `assets/img/avatar/avatar-1.png`;
-                    if(data) {
-                        img = `storage/${data}`;
-                    }
-
-                    return `<img alt="avatar" src="{{ asset('/') }}${img}" class="rounded-circle" width="35">`;
-                }
-            },{
                 "targets": -1,
                 "render": function(data, type, row, meta) {
                     return `
-                        <form action="{{ url('/produk') }}/${row.id}" method="POST" class="d-flex">
+                        <form action="{{ url('/pembayaran') }}/${row.id}" method="POST" class="d-flex">
                             @method('DELETE')
                             @csrf
                             <a
-                                href="{{ url('/produk') }}/${row.id}/edit"
+                                href="{{ url('/pembayaran') }}/${row.id}/edit"
                                 class="btn btn-sm btn-warning mr-2"
                             >
                                 Edit
@@ -110,4 +95,4 @@
         });
     });
 </script>
-@endpush
+@endpush()

@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -12,10 +11,14 @@ class Transaksi extends Model
     protected $guarded = ['id'];
 
     public function produk() {
-        return $this->belongsTo(Produk::class,'id');
+        return $this->belongsTo(Produk::class, 'id_produk');
     }
 
     public function user() {
-        return $this->belongsTo(User::class,'id');
+        return $this->belongsTo(User::class, 'id_user');
+    }
+
+    public function pembayaran() {
+        return $this->belongsTo(Pembayaran::class, 'id_pembayaran');
     }
 }

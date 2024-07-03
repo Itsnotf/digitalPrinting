@@ -12,6 +12,6 @@ class Produk extends Model
     protected $guarded = ['id'];
 
     public function transaksi() {
-        return $this->hasOne(Transaksi::class);
+        return $this->hasOne(Transaksi::class, 'id_produk');
     }
 }

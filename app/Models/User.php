@@ -48,6 +48,6 @@ class User extends Authenticatable implements MustVerifyEmail
     ];
 
     public function transaksi() {
-        return $this->hasOne(Transaksi::class);
+        return $this->hasOne(Transaksi::class, 'id_user');
     }
 }

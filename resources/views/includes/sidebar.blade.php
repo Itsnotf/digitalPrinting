@@ -1,12 +1,8 @@
 <aside id="sidebar-wrapper">
-    <div class="sidebar-brand">
+    <div class="sidebar-brand mt-2 d-flex align-items-center justify-content-center">
         <a href="{{ url('/') }}">
-            <img src="{{ asset('assets/img/icon.png') }}" width="30" height="40" alt="icon">
-        </a>
-    </div>
-    <div class="sidebar-brand sidebar-brand-sm">
-        <a href="{{ url('/') }}">
-            <img src="{{ asset('assets/img/icon.png') }}" width="30" height="40" alt="icon">
+            <p>DIGITAL</p>
+            {{-- <img src="{{ asset('assets/img/icon.png') }}" width="30" height="40" alt="icon"> --}}
         </a>
     </div>
     <ul class="sidebar-menu">
@@ -45,6 +41,12 @@
             <a class="nav-link" href="{{ route('produk.index') }}">
                 <i class="fas fa-users"></i>
                 <span>Kelola Produk</span>
+            </a>
+        </li>
+        <li class="{{ Route::is('pembayaran*') ? 'active' : '' }}">
+            <a class="nav-link" href="{{ route('pembayaran.index') }}">
+                <i class="fas fa-users"></i>
+                <span>Kelola Pembayaran</span>
             </a>
         </li>
         <li class="{{ Route::is('transaksi*') ? 'active' : '' }}">

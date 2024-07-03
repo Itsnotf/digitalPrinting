@@ -14,12 +14,23 @@ class TransaksiController extends Controller
     public function index(Request $request)
     {
         if ($request->ajax()) {
-            $query = Transaksi::get();
-            return DataTables::of($query)->make();
+            $query = Transaksi::with('user', 'pembayaran', 'produk')->get();
+            return DataTables::of($query)
+                ->addColumn('user', function ($row) {
+                    return $row->user->name;
+                })
+                ->addColumn('pembayaran', function ($row) {
+                    return $row->pembayaran->nama;
+                })
+                ->addColumn('produk', function ($row) {
+                    return $row->produk->namaProduk;
+                })
+                ->make(true);
         }
 
-        return view('pages.produk.index');
+        return view('pages.transaksi.index');
     }
+
 
     /**
      * Show the form for creating a new resource.
@@ -66,6 +77,7 @@ class TransaksiController extends Controller
      */
     public function destroy(Transaksi $transaksi)
     {
-        //
+        $transaksi->delete();
+        return redirect('pembayaran')->with('toast', 'showToast("Data berhasil dihapus")');
     }
 }

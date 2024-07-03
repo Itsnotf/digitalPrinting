@@ -18,6 +18,7 @@ return new class extends Migration
             $table->foreignId('id_pembayaran')->constrained('pembayarans')->cascadeOnUpdate()->cascadeOnUpdate();
             $table->string('qty');
             $table->string('catatan');
+            $table->string('bukti');
             $table->timestamps();
         });
     }
