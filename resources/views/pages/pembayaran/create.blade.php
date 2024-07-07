@@ -58,6 +58,7 @@
                             <select class="form-control @error('jenis') is-invalid @enderror" name="jenis" id="jenis">
                                 <option value="BANK" {{ old('jenis') == 'BANK' ? 'selected' : '' }}>BANK</option>
                                 <option value="E-Wallet" {{ old('jenis') == 'E-Wallet' ? 'selected' : '' }}>E-Wallet</option>
+                                <option value="Tunai" {{ old('jenis') == 'Tunai' ? 'selected' : '' }}>Tunai</option>
                             </select>
                             @error('jenis')
                             <div class="invalid-feedback">

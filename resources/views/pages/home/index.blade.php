@@ -28,14 +28,16 @@
             <div class="card mb-3" style="max-width: full; border: none">
                 <div class="row g-0">
                     <div class="col-md-4">
-                        <img src="{{ asset('assets/img/hero.jpg') }}" class="img-fluid" style="border-radius: 5%" alt="...">
+                        <img src="{{ asset('assets/img/hero.jpg') }}" class="img-fluid" style="border-radius: 5%;"
+                            alt="...">
                     </div>
-                    <div class="col-md-7 offset-md-1 " >
-                        <div class="card-body" >
+                    <div class="col-md-7 offset-md-1 ">
+                        <div class="card-body">
                             <h1 class="card-title">Colaqo Grafika Palembang</h1>
                             <p class="card-text">Melayani dengan senyum, mencetak dengan sempurna, kepuasan anda adalah
                                 tujuan kami</p>
-                            <p class="card-text" style="text-align: justify"><small class="text-muted">Colaqo Colaqo Grafika Palembang adalah sebuah
+                            <p class="card-text" style="text-align: justify"><small class="text-muted">Colaqo Colaqo Grafika
+                                    Palembang adalah sebuah
                                     usaha yang bergerak di ranah Digital Printing, Percetakan, dan Advertising. Menjadi
                                     salah satu pilihan dalam memenuhi kebutuhan cetak dan advertising di wilayah Palembang.
                                     Mempunyai logo Perusahaan berlambangkan kupu-kupu yang melambangkan perjalanan yang
@@ -47,9 +49,12 @@
                                     elegan. Colaqo Grafika memiliki beragam solusi cetak untuk memenuhi kebutuhan promosi
                                     dan branding pelanggan. Tak hanya itu, layanan pembuatan Id card yang profesional dan
                                     papan nama yang eksklusif juga menjadi andalan Colaqo Grafika.
-                                   </small></p>
+                                </small></p>
+                                <a class="btn btn-primary px-4" style="border-radius: 20px; background: black; border: none" href="https://wa.me/6289627001200?text=Hallo admin ">Kontak Kami</a>
                         </div>
+
                     </div>
+
                 </div>
             </div>
         </div>
@@ -158,8 +163,8 @@
                                                 </select>
                                                 <label for="">Nomer Transaksi</label>
                                                 <input type="number"
-                                                    class="form-control @error('bukti') is-invalid @enderror" id="bukti"
-                                                    disabled>
+                                                    class="form-control @error('bukti') is-invalid @enderror"
+                                                    id="bukti" disabled>
                                                 @error('id_pembayaran')
                                                     <div class="invalid-feedback">
                                                         {{ $message }}
@@ -172,8 +177,8 @@
                                             <div class="col-sm-12">
                                                 <label for="bukti" class="col-form-label">Bukti Pembayaran</label>
                                                 <input type="file"
-                                                    class="form-control @error('bukti') is-invalid @enderror" name="bukti"
-                                                    id="bukti">
+                                                    class="form-control @error('bukti') is-invalid @enderror"
+                                                    name="bukti" id="bukti">
                                                 @error('bukti')
                                                     <div class="invalid-feedback">
                                                         {{ $message }}
