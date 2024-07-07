@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('transaksis', function (Blueprint $table) {
             $table->id();
             $table->foreignId('id_user')->constrained('users')->cascadeOnUpdate()->cascadeOnUpdate();
-            $table->foreignId('id_produk')->constrained('produks')->cascadeOnUpdate()->cascadeOnUpdate();
-            $table->foreignId('id_pembayaran')->constrained('pembayarans')->cascadeOnUpdate()->cascadeOnUpdate();
+            $table->foreignId('id_produk')->constrained('produks')->cascadeOnDelete();
+            $table->foreignId('id_pembayaran')->constrained('pembayarans')->cascadeOnDelete();
             $table->string('qty');
             $table->string('catatan');
             $table->string('bukti');

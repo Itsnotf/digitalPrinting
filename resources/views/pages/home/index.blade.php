@@ -23,7 +23,38 @@
     </header>
 
 
-    <!-- Section-->
+    <section class="py-5">
+        <div class="container px-4 px-lg-5 mt-5">
+            <div class="card mb-3" style="max-width: full; border: none">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img src="{{ asset('assets/img/hero.jpg') }}" class="img-fluid" style="border-radius: 5%" alt="...">
+                    </div>
+                    <div class="col-md-7 offset-md-1 " >
+                        <div class="card-body" >
+                            <h1 class="card-title">Colaqo Grafika Palembang</h1>
+                            <p class="card-text">Melayani dengan senyum, mencetak dengan sempurna, kepuasan anda adalah
+                                tujuan kami</p>
+                            <p class="card-text" style="text-align: justify"><small class="text-muted">Colaqo Colaqo Grafika Palembang adalah sebuah
+                                    usaha yang bergerak di ranah Digital Printing, Percetakan, dan Advertising. Menjadi
+                                    salah satu pilihan dalam memenuhi kebutuhan cetak dan advertising di wilayah Palembang.
+                                    Mempunyai logo Perusahaan berlambangkan kupu-kupu yang melambangkan perjalanan yang
+                                    penuh perjuangan hingga mencapai bentuk yang indah, 4 sayap kupu-kupu pada lambing
+                                    tersebut juga berbentuk seperti cairan butiran tinta yang mana melambangkan bahwa logo
+                                    tersebut bergerak pada industri percetakan. Colaqo Grafika telah memperkenalkan beragam
+                                    produk dan jasa berkualitas tinggi kepada masyarakat. Mulai dari pembuatan spanduk yang
+                                    eye-catching, stiker yang berkualitas, hingga produk-produk berbahan akrilik yang
+                                    elegan. Colaqo Grafika memiliki beragam solusi cetak untuk memenuhi kebutuhan promosi
+                                    dan branding pelanggan. Tak hanya itu, layanan pembuatan Id card yang profesional dan
+                                    papan nama yang eksklusif juga menjadi andalan Colaqo Grafika.
+                                   </small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="py-5">
         <div class="container px-4 px-lg-5 mt-5">
             <div class="">
@@ -165,6 +196,10 @@
             </div>
         </div>
     </section>
+
+
+
+
 
     <script>
         function updateBukti() {

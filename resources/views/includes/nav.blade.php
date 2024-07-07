@@ -20,6 +20,16 @@
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <li><a class="dropdown-item" href="{{ route('profileUser') }}">Profile</a></li>
                         <li><a class="dropdown-item" href="{{ route('transaksiUser') }}">Riwayat Transaksi</a></li>
+                        <li><form action="{{ route('logout') }}" method="POST">
+                            @csrf
+                            <button type="submit" class="dropdown-item has-icon text-danger btn-logout">
+                                <i class="fas fa-sign-out-alt"></i> Logout
+                            </button>
+                        </form></li>
+                        @can('admin')
+                        <li><a class="dropdown-item" href="{{ route('dashboard') }}">Dashboard</a></li>
+                        @endcan
+
                     </ul>
                 </li>
             @else
